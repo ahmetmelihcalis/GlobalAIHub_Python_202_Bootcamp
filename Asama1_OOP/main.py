@@ -23,7 +23,7 @@ def handle_find_book(library):
     book_found = library.find_book(isbn)
     if book_found:
         print("Kitap bulundu:")
-        print(f"-> {book_found}")
+        print(f"{book_found}")
     else:
         print(f"Bu ISBN ile bir kitap bulunamadı.")
 

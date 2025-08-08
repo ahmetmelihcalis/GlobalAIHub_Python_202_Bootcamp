@@ -1,6 +1,6 @@
 import sqlite3
 
-# Book Sınıfı (Validasyon ile)
+#Book Sınıfı (Validasyon ile)
 class Book:
     def __init__(self, title, author, isbn):
         if not title.strip() or not author.strip() or not isbn.strip():
@@ -13,7 +13,7 @@ class Book:
         return f"{self.title} by {self.author} (ISBN: {self.isbn})"
 
 
-# Library Sınıfı
+#Library Sınıfı
 class Library:
     def __init__(self, db_name="library.db"):
         self.db_name = db_name
@@ -30,6 +30,7 @@ class Library:
                 )
             ''')
 
+#Kütüphane Kitap Ekleme,Silme,Listeleme,Bulma İşlemleri
     def add_book(self, book):
         try:
             with sqlite3.connect(self.db_name) as conn:
@@ -62,11 +63,11 @@ class Library:
             print("Kütüphanede hiç kitap yok.")
             return
         
-        print("\n--- Kütüphanedeki Kitaplar ---")
+        print("--- Kütüphanedeki Kitaplar ---")
         for row in books_data:
             book = Book(title=row['title'], author=row['author'], isbn=row['isbn'])
             print(book)
-        print("----------------------------\n")
+        print("----------------------------")
 
     def find_book(self, isbn):
         with sqlite3.connect(self.db_name) as conn:
