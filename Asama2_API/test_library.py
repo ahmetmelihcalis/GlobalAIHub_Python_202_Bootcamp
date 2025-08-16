@@ -34,7 +34,7 @@ def library():
 # --- YENİ API TESTLERİ ---
 #Başarılı bir API cevabıyla kitap ekleme testi
 def test_add_book_from_api_success(library, mocker):
-    # 1. Hazırlık: Sahte bir API cevabı oluştur ve httpx.get'i taklit etmesini söyle.
+    # Hazırlık: Sahte bir API cevabı oluştur ve httpx.get'i taklit etmesini söyle.
     fake_isbn = "978-0321765723"
     fake_response_json = {
         "title": "Yüzüklerin Efendisi",
