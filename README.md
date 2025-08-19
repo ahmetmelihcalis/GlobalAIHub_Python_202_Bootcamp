@@ -68,9 +68,11 @@ Bu proje, Global AI Hub Python 202 Bootcamp kapsamında öğretilen üç konuyu 
 - Tarayıcıdan [http://localhost:8000/docs](http://localhost:8000/docs) adresine giderek interaktif API dokümantasyonunu kullanabilirsiniz.
 
 #### API Endpointleri
-- `GET /books` : Tüm kitapları listeler
-- `POST /books` : ISBN ile kitap ekler (örnek body: `{ "isbn": "978-0321765723" }`)
-- `DELETE /books/{isbn}` : Belirtilen ISBN'li kitabı siler
+
+- **GET /books**: Tüm kitapları listeler.
+- **POST /books**: ISBN ile kitap ekler. (Body: `{ "isbn": "..." }`)
+- **GET /books/{isbn}**: Belirli ISBN'li kitabı getirir.
+- **DELETE /books/{isbn}**: Belirli ISBN'li kitabı siler.
 
 ---
 
