@@ -71,7 +71,7 @@ def test_add_book_api_not_found(library, mocker, capsys):
 
 #İnternet bağlantısı hatası testi
 def test_add_book_api_request_error(library, mocker, capsys):
-    # Hazırlık: httpx.get'in bir hata fırlatmasını taklit et.
+    # Hazırlık: httpx.get'in bir hata fırlatması taklidi
     fake_isbn = "111-111111-111-1"
     mocker.patch("httpx.get", side_effect=httpx.RequestError("Bağlantı Hatası"))
 

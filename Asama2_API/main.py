@@ -3,7 +3,7 @@ from library import Library
 
 #Yeni handle_add_book fonksiyonu
 def handle_add_book(library):
-    print("\--- ISBN ile Yeni Kitap Ekle ---")
+    print("--- ISBN ile Yeni Kitap Ekle ---")
     isbn = input("Lütfen kitabın ISBN numarasını girin: ")
     
     if not isbn.strip():

@@ -35,12 +35,12 @@ class Library:
 
     #YENİ add_book METODU
     def add_book(self, isbn: str):
-        print(f"\n{isbn} ISBN'li kitap için internetten bilgi aranıyor...")
-        api_url = f"https://openlibrary.org/isbn/{isbn}.json"
+        print(f"{isbn} ISBN'li kitap için internetten bilgi aranıyor...")
+        OPEN_LIBRARY_URL = f"https://openlibrary.org/isbn/{isbn}.json"
         
         try:
             # 1. API'den veriyi alma
-            response = httpx.get(api_url, follow_redirects=True, timeout=10.0)
+            response = httpx.get(OPEN_LIBRARY_URL, follow_redirects=True, timeout=10.0)
             
             if response.status_code == 404:
                 print("Hata: Bu ISBN ile Open Library'de bir kitap bulunamadı.")
@@ -108,10 +108,10 @@ class Library:
             books_data = cursor.fetchall()
 
         if not books_data:
-            print("\nKütüphanede hiç kitap yok.")
+            print("Kütüphanede hiç kitap yok.")
             return
         
-        print("\n--- Kütüphanedeki Kitaplar ---")
+        print("--- Kütüphanedeki Kitaplar ---")
         for row in books_data:
             book = Book(title=row['title'], author=row['author'], isbn=row['isbn'])
             print(book)
