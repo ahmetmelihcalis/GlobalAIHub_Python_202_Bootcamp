@@ -34,9 +34,7 @@ class Library:
 
     def add_book_from_api(self, isbn: str) -> Optional[Book]:
         """
-        API için kitap ekler. 
-        Başarılı olursa Book nesnesi, başarısız olursa None döndürür.
-        (Senin gelişmiş yazar bulma mantığını koruyoruz)
+        API için kitap ekler.
         """
         OPEN_LIBRARY_URL = f"https://openlibrary.org/isbn/{isbn}.json"
         try:

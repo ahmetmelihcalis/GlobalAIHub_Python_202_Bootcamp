@@ -77,16 +77,27 @@ Bu proje, Global AI Hub Python 202 Bootcamp kapsamında öğretilen üç konuyu 
 ---
 
 ## Testler
-- Tüm aşamalarda pytest ile testler yazılmıştır.
+- Tüm aşamalarda pytest ile testler yazılmıştır. Testler, hem temel işlevleri hem de hata durumlarını kapsar.
+
 - Testleri çalıştırmak için ilgili klasörde:
 	```bash
 	pytest
 	```
-    veya
-
-    ```bash
+	veya
+	```bash
 	pytest -v
 	```
+
+- **Aşama 1 (OOP):**
+	- Kitap ekleme, silme, arama ve listeleme fonksiyonlarının testi
+
+- **Aşama 2 (API Entegrasyonu):**
+	- API'den veri çekerek kitap ekleme testi
+	- API başarısız olursa mock ile hata yönetimi testi
+
+- **Aşama 3 (FastAPI):**
+	- API endpoint'leri üzerinden kitap ekleme, silme, listeleme ve hata durumları testi
+	- Dış API çağrılarının mock'lanarak izole test edilmesi
 
 ---
 
@@ -106,8 +117,7 @@ Bu proje, Global AI Hub Python 202 Bootcamp kapsamında öğretilen üç konuyu 
 	- API üzerinden kitap ekleme, silme ve listeleme işlemleri yapılabilir.
 
 - **Testler ve Mocklama:**
-	- Tüm aşamalarda testler pytest ile yazılmıştır.
-	- Dış API çağrıları testlerde mock'lanmıştır; böylece testler hızlı ve dış servislere bağımlı değildir.
+	- Dış API çağrıları testlerde mock'lanmıştır, böylece testler hızlı ve dış servislere bağımlı değildir.
 
 - **Kurulum:**
 	- Kurulumda pip veya uv kullanılabilir.

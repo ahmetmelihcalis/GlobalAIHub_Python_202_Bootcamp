@@ -27,7 +27,7 @@ def client():
                 time.sleep(0.1)
 
 #Test Fonksiyonları
-# Artık testlerimiz, 'library' metotlarını doğrudan değil,'client' aracılığıyla API endpoint'lerini çağırarak çalışacak.
+# Artık testlerimiz, 'library' metotlarını doğrudan değil,API endpoint'lerini çağırarak çalışacak.
 
 # Kütüphane boşken kitapları listeleme testi
 def test_get_all_books_empty(client):

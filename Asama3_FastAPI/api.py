@@ -13,13 +13,13 @@ app = FastAPI(
 library = Library(db_name="api_library.db")
 
 #Pydantic Veri Modelleri
-# Bu model, API'den dışarıya bir kitap verisi döndürürken kullanılacak.
+#Bu model, API'den dışarıya bir kitap verisi döndürürken kullanılacak.
 class BookModel(BaseModel):
     kitap_ismi: str
     yazar: str
     isbn: str
 
-# Bu model, API'ye yeni bir kitap eklemek için dışarıdan veri alırken kullanılacak.
+#Bu model, API'ye yeni bir kitap eklemek için dışarıdan veri alırken kullanılacak.
 class ISBNModel(BaseModel):
     isbn: str = Field(..., description="Eklenecek kitabın 10 veya 13 haneli ISBN numarası")
 
@@ -71,15 +71,15 @@ def yeni_kitap_ekleme(isbn_data: ISBNModel):
 def kitap_silme(isbn: str):
     """
     Belirtilen ISBN'e sahip kitabı kütüphaneden siler.
-    Başarılı silme işleminde (204 No Content) bir body döndürmez.
+    Başarılı silme işleminde bir body döndürmez.
     """
     success = library.remove_book_for_api(isbn)
 
-    # library.py'den False döndüğünde, kitabın bulunamadığını anlarız.
+    #library.py'den False döndüğünde, kitabın bulunamadığını anlarız.
     if not success:
         raise HTTPException(
             status_code=404, 
             detail="Bu ISBN ile eşleşen bir kitap kütüphanede bulunamadı."
         )
-    # Başarılı olunca FastAPI otomatik olarak 204 status kodu ve boş body döndürecek.
+    #Başarılı olunca FastAPI otomatik olarak 204 status kodu ve boş body döndürecek.
     return 
