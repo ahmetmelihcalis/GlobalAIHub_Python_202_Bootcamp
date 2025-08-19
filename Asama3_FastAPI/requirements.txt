@@ -1,0 +1,6 @@
+httpx
+fastapi[all]
+uvicorn
+pytest
+pytest-mock
+python-multipart
